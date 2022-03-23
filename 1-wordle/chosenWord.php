@@ -1,6 +1,6 @@
 <?php
 
-require_once ('select.php');
+require_once ('function.php');
 //Choose Word of Day
 function chosenWord(){
     $servidor = '92.249.45.53';

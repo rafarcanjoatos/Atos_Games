@@ -35,7 +35,7 @@ echo '<div class="col-10">';
         echo '</div>';
     echo '<br>';
 //}
-echo '<input type="button" class="button" onclick="validateWord();">Enviar</input>';
+echo '<input type="button" value="Enviar" class="button" onclick="validateWord();"></input>';
 echo '</div>';
 echo '</div>';
 

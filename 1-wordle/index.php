@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="pt">
 <head>
     <title>Wordle</title>
     <!-- Required meta tags -->
@@ -15,32 +15,16 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/22471e2f1a.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/ValidateWord.js"></script>
+
 </head>
 <body>
 
 <?php
 require_once('wordle_header.html');
-require_once('function.php');
-
-echo '<div class="row justify-content-center text-center">';
-echo '<div class="col-10">';
-//for($x=0; $x<6; $x++){    
-        echo '<div class="row justify-content-center text-center" style="height: 50px;">';
-            for( $i=0; $i < 5; $i++ ){
-                echo '<div class="col-1 p-2 m-2 border border-dark">';
-                    echo '<input type="text" maxlength="1" id="leter_'.$i.'" class="text-center border-0 form-control text-uppercase"></input>';
-                echo '</div>';
-            }
-        echo '</div>';
-    echo '<br>';
-//}
-echo '<input type="button" value="Enviar" class="button" onclick="validateWord();"></input>';
-echo '</div>';
-echo '</div>';
-
+require_once('controller.php');
+require_once('wordle_body.html');
 require_once('wordle_footer.html');
 ?>
-
 </body>
 </html>

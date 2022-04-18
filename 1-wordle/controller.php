@@ -46,7 +46,15 @@ function importWord(){
 
     $letersOfDay=str_split($wordOfDay);
 
-    $json_letersOfDay = json_encode($letersOfDay);
     return $letersOfDay;
 }
+
+function simulateWord(){
+    $wordOfDay = 'cotia';
+    return $wordOfDay;
+}
+$var = simulateWord();
 ?>
+<script>
+    const value ="<?php echo $var;?>";
+</script>

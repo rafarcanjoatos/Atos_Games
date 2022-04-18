@@ -1,0 +1,15 @@
+<div class="row justify-content-center text-center">
+    <div class="col-10">
+    <!-- //for($x=0; $x<6; $x++){ //LINHAS  }    -->
+        <div class="row justify-content-center text-center" style="height: 50px;">
+            <!-- START LOOP WORDS-->
+            <?php for( $i=1; $i < 6; $i++ ){ ?>
+                <div class="col-1 p-2 m-2 border border-dark" id="div_letter_<?php echo $i;?>">
+                    <input type="text" maxlength="1" id="leter_<?php echo $i;?>" class="text-center border-0 form-control text-uppercase"></input>
+                </div>
+            <?php } ?>
+            <!-- END LOOP WORDS-->
+        </div><br>
+    <input type="submit" value="Enviar" class="button" onclick="validateWord(leter_1.value,leter_2.value,leter_3.value,leter_4.value,leter_5.value);"></input>
+    </div>
+</div>

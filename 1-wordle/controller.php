@@ -44,17 +44,18 @@ function importWord(){
     } else { logMe("FALHA EM BUSCAR PALAVRA DO DIA", 'error');}
     mysqli_close($connect);
 
-    $letersOfDay=str_split($wordOfDay);
+    //$letersOfDay=str_split($wordOfDay);
 
-    return $letersOfDay;
+    return $wordOfDay;
 }
-
+/*
 function simulateWord(){
     $wordOfDay = 'cotia';
     return $wordOfDay;
-}
-$var = simulateWord();
+}*/
+
+$wordOfDay = importWord();
 ?>
 <script>
-    const value ="<?php echo $var;?>";
+    const value ="<?php echo $wordOfDay;?>";
 </script>

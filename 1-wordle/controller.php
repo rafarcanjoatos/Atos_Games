@@ -55,6 +55,7 @@ function simulateWord(){
 }*/
 
 $wordOfDay = importWord();
+//$wordOfDay = simulateWord();
 ?>
 <script>
     const value ="<?php echo $wordOfDay;?>";

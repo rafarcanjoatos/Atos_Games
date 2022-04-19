@@ -5,10 +5,12 @@ function validateWord(leter_1,leter_2,leter_3,leter_4,leter_5,line) {
 }
 
 function startValidate(value,value2,r){
+    const letersNoCut = value;
     const letersOfDay = value.split("");
     let letersUser = value2.split("");
     let acertou;
     let errou;
+    let quase;
 
     console.log(letersOfDay);
     console.log(letersUser);
@@ -19,7 +21,12 @@ function startValidate(value,value2,r){
                 document.getElementById('div_leter_'+[l+1]+'_'+r).style.backgroundColor = 'green';  
                 document.getElementById('leter_'+[l+1]+'_'+r).readOnly = true;        
                 
-            }else{
+            }else if(letersNoCut.indexOf(letersUser[l]) != -1){
+                quase += [l+1]
+                document.getElementById('div_leter_'+[l+1]+'_'+r).style.backgroundColor = 'yellow';  
+                document.getElementById('leter_'+[l+1]+'_'+r).readOnly = true;     
+            }            
+            else{
                 errou += [l+1]            
                 document.getElementById('div_leter_'+[l+1]+'_'+r).style.backgroundColor = 'red';  
                 document.getElementById('leter_'+[l+1]+'_'+r).readOnly = true;  
@@ -29,7 +36,9 @@ function startValidate(value,value2,r){
         }
 
     console.log("Acertou: "+acertou)
+    console.log("Quase: "+quase)
     console.log("Errou: "+errou)
     errou = [];
+    quase = [];
     acertou = [];    
 }

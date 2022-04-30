@@ -49,13 +49,14 @@ function importWord(){
     return $wordOfDay;
 }
 
+/*
 function simulateWord(){
     $wordOfDay = 'amora';
     return $wordOfDay;
-}
+}*/
 
-//$wordOfDay = importWord();
-$wordOfDay = simulateWord();
+$wordOfDay = importWord();
+//$wordOfDay = simulateWord();
 ?>
 
 <script>

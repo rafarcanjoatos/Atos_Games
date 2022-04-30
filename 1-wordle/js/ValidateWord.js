@@ -3,12 +3,11 @@ function validateLeter(l,r){
     var noAccent = leter.replace(/[^\w\-]+/g, '-').replace(/[0-9]/g, '-');
 
     if((leter!=null)&&(leter!=0)&&(leter==noAccent)){
-        nextWord(l,r,leter);
+        nextWord(l,r);
     }
     else{
         document.getElementById('leter_'+l+'_'+r).value='';
     }
-
 }
 
 function validateCompleteWord(leter_1,leter_2,leter_3,leter_4,leter_5,r) {

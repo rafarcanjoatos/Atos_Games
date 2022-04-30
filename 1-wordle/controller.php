@@ -48,14 +48,14 @@ function importWord(){
 
     return $wordOfDay;
 }
-/*
-function simulateWord(){
-    $wordOfDay = 'cotia';
-    return $wordOfDay;
-}*/
 
-$wordOfDay = importWord();
-//$wordOfDay = simulateWord();
+function simulateWord(){
+    $wordOfDay = 'amora';
+    return $wordOfDay;
+}
+
+//$wordOfDay = importWord();
+$wordOfDay = simulateWord();
 ?>
 <script>
     const value ="<?php echo $wordOfDay;?>";

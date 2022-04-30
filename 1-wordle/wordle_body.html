@@ -1,20 +1,21 @@
 <div class="row justify-content-center text-center">
     <div class="col-10">
+    <div class="game">
     <!-- START LOOP ROWS -->
-    <?php for($r=0; $r<6; $r++ ){ $line = $r; ?>
+    <?php for($r=1; $r<7; $r++ ){ $line = $r; ?>
         <div class="row justify-content-center text-center" style="height: 50px;">
             <!-- START LOOP WORDS-->
             <?php for( $l=1; $l<6; $l++ ){ ?>
-                <div class="col-1 p-2 m-2 border border-dark" id="div_leter_<?php echo $l;?>_<?php echo $r;?>">
-                    <input type="text" maxlength="1" id="leter_<?php echo $l;?>_<?php echo $r;?>" class="text-center border-0 form-control text-uppercase"></input>
+                <div class="leter col-1 p-2 m-2 border border-dark" id="div_leter_<?php echo $l;?>_<?php echo $r;?>">
+                    <input type="text" maxlength="1" id="leter_<?php echo $l;?>_<?php echo $r;?>" class="text-center border-0 form-control text-uppercase" onkeyup="validateLeter(<?php echo $l;?>,<?php echo $r;?>)"></input>
                 </div>
             <?php } ?>
             <!-- END LOOP WORDS-->
-            <div class="col-1 p-2 m-2">
-                <input type="submit" value="Enviar" class="button" id="button_<?php echo $r;?>" onclick="validateWord(leter_1_<?php echo $r;?>.value,leter_2_<?php echo $r;?>.value,leter_3_<?php echo $r;?>.value,leter_4_<?php echo $r;?>.value,leter_5_<?php echo $r;?>.value,<?php echo $line;?>)"></input>
+            <div id="enviar" class="col-1 p-2 m-2">
+                <input type="submit" value="Enviar" class="button" id="button_<?php echo $r;?>" onclick="validateCompleteWord(leter_1_<?php echo $r;?>.value,leter_2_<?php echo $r;?>.value,leter_3_<?php echo $r;?>.value,leter_4_<?php echo $r;?>.value,leter_5_<?php echo $r;?>.value,<?php echo $line;?>)"></input>
             </div>
         </div>
     <?php } ?>
-    
+    </div>
     </div>
 </div>

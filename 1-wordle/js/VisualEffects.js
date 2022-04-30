@@ -16,9 +16,10 @@ function nextWord(l,r){
             displayButton(r,1,1);
             document.getElementById('button_'+r).focus();
         }
-
-        document.getElementById('leter_'+l+'_'+r).focus();
-        displayLetter(l,r,1);
+        else{
+            document.getElementById('leter_'+l+'_'+r).focus();
+            displayLetter(l,r,1);
+        }
     }
 }
 
@@ -28,7 +29,6 @@ function alwaysFocus(backspace){
             for (var l=1; l<6; l++){        
                 var leter = document.getElementById('leter_'+l+'_'+r).value;
                 
-                console.log(leter);
                 if ((leter==null)||(leter=="")){                            
                     if (backspace==1){           
                         l-=1;
@@ -63,8 +63,12 @@ function displayButton(r,display,active){
     }
 }
 
-function displayLetter(l,r,active){
-    if (active=0){
+function displayLetter(l,r,status){
+    if (status==0){
         document.getElementById('leter_'+(l+1)+'_'+r).readOnly = true;
+
+    }
+    if (status==3){
+        document.getElementById('leter_'+l+'_'+r).disabled = true;
     }
 }

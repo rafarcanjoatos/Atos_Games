@@ -20,14 +20,14 @@ function startValidate(wordOfDay,wordOfUser,r){
     var letersNoCut = wordOfDay;
     var letersOfDay = wordOfDay.split("");
     var letersUser = wordOfUser.split("");
-    var acertou;
-    var errou;
-    var quase;
+    errou = [];
+    quase = [];
+    acertou = [];
 
     console.log(letersOfDay);
     console.log(letersUser);
 
-        for (var l=0; l<6; l++){
+        for (var l=0; l<5; l++){
             if (letersOfDay[l]==letersUser[l]){
                 acertou += [l+1]
                 document.getElementById('div_leter_'+[l+1]+'_'+r).style.backgroundColor = 'green';  
@@ -43,16 +43,31 @@ function startValidate(wordOfDay,wordOfUser,r){
                 document.getElementById('div_leter_'+[l+1]+'_'+r).style.backgroundColor = 'red';  
                 displayLetter(l,r,0);
             }
-            
-            displayButton(r,0,0);
-            displayButton((r+1),1,0);
-            focusFirst(r);
         }
-
+    
     console.log("Acertou: "+acertou)
     console.log("Quase: "+quase)
     console.log("Errou: "+errou)
+
+            
+    displayButton(r,0,0);
+    if(r<6){            
+        displayButton((r+1),1,0);
+        focusFirst(r);
+    }
+
+    //LOSER
+    if(r==6){
+        loser();
+    }
+    
+    //WINNER
+    acertos = acertou.length;
+    if (acertou.length==5) {
+        win();
+    } 
+
     errou = [];
     quase = [];
-    acertou = [];    
+    acertou = [];
 }

@@ -49,8 +49,8 @@ function importWord(){
     return $wordOfDay;
 }
 
-/*
-function simulateWord(){
+
+/*function simulateWord(){
     $wordOfDay = 'amora';
     return $wordOfDay;
 }*/

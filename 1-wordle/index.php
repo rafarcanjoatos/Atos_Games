@@ -19,6 +19,7 @@
     <script type="text/javascript" src="js/ValidateWord.js"></script>
     <script type="text/javascript" src="js/VisualEffects.js"></script>
     <script type="text/javascript" src="js/Buttons.js"></script>
+    <script type="text/javascript" src="js/Messages.js"></script>
 </head>
 <body>
 

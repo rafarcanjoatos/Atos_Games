@@ -11,16 +11,16 @@ function validateLeter(l,r){
 
 }
 
-function validateCompleteWord(leter_1,leter_2,leter_3,leter_4,leter_5,l) {
+function validateCompleteWord(leter_1,leter_2,leter_3,leter_4,leter_5,r) {
     // Concatenate word of user
-    value2 = leter_1.concat(leter_2,leter_3,leter_4,leter_5);
-    return startValidate(value,value2,l);
+    wordOfUser = leter_1.concat(leter_2,leter_3,leter_4,leter_5);
+    return startValidate(wordOfDay,wordOfUser,r);
 }
 
-function startValidate(value,value2,r){
-    var letersNoCut = value;
-    var letersOfDay = value.split("");
-    var letersUser = value2.split("");
+function startValidate(wordOfDay,wordOfUser,r){
+    var letersNoCut = wordOfDay;
+    var letersOfDay = wordOfDay.split("");
+    var letersUser = wordOfUser.split("");
     var acertou;
     var errou;
     var quase;

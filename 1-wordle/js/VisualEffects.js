@@ -19,29 +19,25 @@ function nextWord(l,r,leter){
     }
 }
 
-/*
-onclick="alwaysFocus(<?php echo $l;?>,<?php echo $r;?>)"
-
 function alwaysFocus(l,r){
-    console.log(l,r);  
-
-    for (var x=1; x<7; x++){
-        
-        console.log('Inicio'+x); 
-        var leter = document.getElementById('leter_'+l+'_'+r).value;
-        
-        console.log(leter);  
-        if (leter==null){
-            
-            document.getElementById('leter_'+l[x]+'_'+r).focus();
-        }
-        else{
-            document.getElementById('leter_1_1').focus();
+    try{
+        for (var r=1; r<7; r++){
+            for (var l=1; l<6; l++){        
+                var leter = document.getElementById('leter_'+l+'_'+r).value;
+                
+                console.log(leter);
+                if ((leter==null)||(leter=="")){                    
+                    document.getElementById('leter_'+l+'_'+r).focus();
+                    l=6;
+                    r=7
+                }
+            }
         }
     }
+    catch{
+        document.getElementById('leter_1_1').focus();
+    }
 }
-*/
-
 
 
 //BUTTON

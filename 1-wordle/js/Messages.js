@@ -1,9 +1,9 @@
 function win(){
     alert("Você Venceu");
 
-    for (var r=1; r<7; r++){
-        for (var l=1; l<6; l++){
-            displayLetter(l,r,3);
+    for (var row=1; row<7; row++){
+        for (var line=1; line<6; line++){
+            displayLetter(line,row,3);
         }
     }
 }
@@ -11,9 +11,9 @@ function win(){
 function loser(){
     alert("Você Perdeu");
 
-    for (var r=1; r<7; r++){
-        for (var l=1; l<6; l++){
-            displayLetter(l,r,3);
+    for (var row=1; row<7; row++){
+        for (var line=1; line<6; line++){
+            displayLetter(line,row,3);
         }
     }
 }

@@ -25,11 +25,17 @@ function logMe( $msg, $level = 'info', $file = 'main.log'){
 }
 
 function importWord(){
-    $servidor = '92.249.45.53';
-    $banco = 'atosmidi_games';
-    $usuario = 'atosmidi';
-    $senha = 'R4f43l0!';
-    $connect = mysqli_connect($servidor, $usuario, $senha, $banco);
+    // $server = '92.249.45.53';
+    // $bd = 'atosmidi_games';
+    // $user = 'atosmidi';
+    // $password = 'R4f43l0!';
+
+    $server = 'localhost';
+    $bd = 'atosmidi_games';
+    $user = 'root';
+    $password = '';
+
+    $connect = mysqli_connect($server, $user, $password, $bd);
     if (!$connect) {
         die("Connection failed: " . mysqli_connect_error());
     }
@@ -44,19 +50,10 @@ function importWord(){
     } else { logMe("FALHA EM BUSCAR PALAVRA DO DIA", 'error');}
     mysqli_close($connect);
 
-    //$letersOfDay=str_split($wordOfDay);
-
     return $wordOfDay;
 }
 
-
-/*function simulateWord(){
-    $wordOfDay = 'amora';
-    return $wordOfDay;
-}*/
-
 $wordOfDay = importWord();
-//$wordOfDay = simulateWord();
 ?>
 
 <script>

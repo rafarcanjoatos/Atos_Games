@@ -1,74 +1,74 @@
 //FOCUS
 window.onload = function () {
-    document.getElementById("leter_1_1").focus();
+    document.getElementById("char_1_1").focus();
     displayButton(1,1,0);
 }
 
-function focusFirst(r){
-    document.getElementById('leter_1_'+(r+1)).focus();
+function focusFirst(row){
+    document.getElementById('char_1_'+(row+1)).focus();
 }
 
-function nextWord(l,r){
-    if((l<6)){
-        l+=1;
+function nextWord(line,row){
+    if((line<6)){
+        line+=1;
 
-        if(l==6){
-            displayButton(r,1,1);
-            document.getElementById('button_'+r).focus();
+        if(line==6){
+            displayButton(row,1,1);
+            document.getElementById('button_'+row).focus();
         }
         else{
-            document.getElementById('leter_'+l+'_'+r).focus();
-            displayLetter(l,r,1);
+            document.getElementById('char_'+line+'_'+row).focus();
+            displayLetter(line,row,1);
         }
     }
 }
 
 function alwaysFocus(backspace){
     try{
-        for (var r=1; r<7; r++){
-            for (var l=1; l<6; l++){        
-                var leter = document.getElementById('leter_'+l+'_'+r).value;
+        for (var row=1; row<7; row++){
+            for (var line=1; line<6; line++){        
+                var char = document.getElementById('char_'+line+'_'+row).value;
                 
-                if ((leter==null)||(leter=="")){                            
+                if ((char==null)||(char=="")){                            
                     if (backspace==1){           
-                        l-=1;
-                        document.getElementById('leter_'+l+'_'+r).value='';
+                        line-=1;
+                        document.getElementById('char_'+line+'_'+row).value='';
                     }                          
-                    document.getElementById('leter_'+l+'_'+r).focus();                 
-                    l=6;
-                    r=7;         
+                    document.getElementById('char_'+line+'_'+row).focus();                 
+                    line=6;
+                    row=7;         
                 }
             }
         }
     }
     catch{
-        document.getElementById('leter_1_1').focus();
+        document.getElementById('char_1_1').focus();
     }
 }
 
 
 //BUTTON
-function displayButton(r,display,active){
+function displayButton(row,display,active){
     if (display==0){
-        document.getElementById('button_'+r).style.display = 'none';
+        document.getElementById('button_'+row).style.display = 'none';
     }
     if (display==1){
-        document.getElementById('button_'+r).style.display = 'inline'; 
+        document.getElementById('button_'+row).style.display = 'inline'; 
     }
     if (active==0){        
-        document.getElementById('button_'+r).disabled = true;
+        document.getElementById('button_'+row).disabled = true;
     }
     if (active==1){
-        document.getElementById('button_'+r).disabled = false;
+        document.getElementById('button_'+row).disabled = false;
     }
 }
 
-function displayLetter(l,r,status){
+function displayLetter(line,row,status){
     if (status==0){
-        document.getElementById('leter_'+(l+1)+'_'+r).readOnly = true;
+        document.getElementById('char_'+(line+1)+'_'+row).readOnly = true;
 
     }
     if (status==3){
-        document.getElementById('leter_'+l+'_'+r).disabled = true;
+        document.getElementById('char_'+line+'_'+row).disabled = true;
     }
 }

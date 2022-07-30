@@ -30,7 +30,6 @@ require_once('wordle_footer.html');
 <script type="text/javascript" src="js/Game.js"></script>
 <script type="text/javascript" src="js/Char.js"></script>
 <script type="text/javascript" src="js/Word.js"></script>
-<script type="text/javascript" src="js/visualEffects.js"></script>
 <script type="text/javascript" src="js/buttons.js"></script>
 <script type="text/javascript" src="js/messages.js"></script>
 

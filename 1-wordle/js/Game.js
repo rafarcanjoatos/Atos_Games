@@ -10,6 +10,10 @@ var answerDiv = document.getElementById("div-answer");
 switch (round){
     case 1:        
         addAnswerRow(answerDiv,roundLength,wordLenght);
+        break;
+    case 6:
+        alert ("aqui");
+        break;  
 }
 
 function addAnswerRow(answerDiv,roundLength,wordLenght){
@@ -49,6 +53,3 @@ function mountInputChar(line,numberOfChar){
     
     return inputChar;
 }
-
-
-    

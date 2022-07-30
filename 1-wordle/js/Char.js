@@ -135,4 +135,3 @@ function validateChar(char,charSequence,disableKeyboard){
         return statusChar;
     }   
 }
-//

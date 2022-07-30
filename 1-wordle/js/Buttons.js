@@ -16,4 +16,3 @@ function displayLetter(round,i,status){
         y.disabled = true;
     }
 }
-//

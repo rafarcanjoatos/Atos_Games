@@ -76,3 +76,4 @@ function startValidate(wordOfDay,wordOfUser,round){
     near = [];
     hit = [];
 }
+//

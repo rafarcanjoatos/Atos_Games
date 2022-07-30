@@ -3,15 +3,15 @@
 require_once ('controller.php');
 //Choose Word of Day
 function chosenWord(){
-    // $server = '92.249.45.53';
-    // $bd = 'atosmidi_games';
-    // $user = 'atosmidi';
-    // $password = 'R4f43l0!';
-
-    $server = 'localhost';
+    $server = '92.249.45.53';
     $bd = 'atosmidi_games';
-    $user = 'root';
-    $password = '';
+    $user = 'atosmidi';
+    $password = 'R4f43l0!';
+
+    // $server = 'localhost';
+    // $bd = 'atosmidi_games';
+    // $user = 'root';
+    // $password = '';
 
 
     $connect = mysqli_connect($server, $user, $password, $bd);
@@ -56,4 +56,5 @@ function updateWord($connect,$chosenWord){
 }
 
 echo chosenWord();
+//
 ?>

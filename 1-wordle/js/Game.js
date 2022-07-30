@@ -53,3 +53,4 @@ function mountInputChar(line,numberOfChar){
     
     return inputChar;
 }
+//

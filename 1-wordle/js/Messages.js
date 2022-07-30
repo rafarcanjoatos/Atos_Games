@@ -21,3 +21,4 @@ function loser(){
 function wrongChar(){    
     // alert("Digite uma letra válida");
 }
+//

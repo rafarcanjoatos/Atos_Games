@@ -1,86 +1,6 @@
 var charSequence = 1;
-var disableKeyboard = false;
 var statusChar = 4;
-var buttonSubmit = document.getElementById("button-submit");
 
-var char = addEventListener("keydown", function (event){
-    if (disableKeyboard == false){
-        char = event.key;
-
-        //Validating Char
-        char = removeAccent(char);
-        statusChar = validateChar(char,charSequence,statusChar,disableKeyboard);
-
-        if (statusChar == 0){            
-            //Incorrect Char Message  
-            wrongChar();    
-        }
-        
-        if (statusChar == 1){            
-            //Delete Char in the Div
-            charSequence -= 1;            
-            inputChar = document.getElementById("char-"+round+"-"+charSequence);
-            inputChar.textContent = "";
-
-            //Disable Button
-            enableButton(0,buttonSubmit);
-        }
-
-        if (statusChar == 2){              
-            //Backspace Null
-        }
-
-        if(statusChar == 3){
-            //Disable Keyboard
-        }
-
-        if(statusChar == 4){
-            var wordOfUser = [];
-
-            //Get Chars of the div    
-            for(let i = 1; i <= wordLenght; i++){        
-                var x = document.getElementById("char-"+round+"-"+i);
-                wordOfUser.push(x.textContent);
-            }
-            
-            //Validating Word
-            startValidate(wordOfDay,wordOfUser,round);
-        
-            //Next Round
-            round +=1;
-            
-            // Loser
-            if(round==7){
-                loser();
-            }
-        
-            //Restart Div Focus
-            charSequence = 1;
-        
-            //Disable Button
-            enableButton(0,buttonSubmit);
-        }
-
-        if (statusChar == 5){    
-            //Put Char in the Div
-            inputChar = document.getElementById("char-"+round+"-"+charSequence);
-            inputChar.textContent = char;
-            
-            //Last Char of Row
-            if(charSequence == wordLenght){    
-                //Next Char Div
-                charSequence += 1;
-
-                //Enable Button Send
-                enableButton(1,buttonSubmit);
-                
-            }else{
-                //Next Char Div
-                charSequence += 1;
-            }
-        }
-    }
-})
 
 function removeAccent(char){
     var validChars = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','ç','z','x','c','v','b','n','m','Backspace','Enter'];
@@ -92,7 +12,7 @@ function removeAccent(char){
     }
 }
 
-function validateChar(char,charSequence,disableKeyboard){    
+function validateChar(char,charSequence,statusChar,buttonSubmitDisabled){    
     //Wrong Char
     if(char == 0){
         statusChar = 0;
@@ -118,10 +38,16 @@ function validateChar(char,charSequence,disableKeyboard){
     }    
 
     //Enter
-    if(char == 'Enter'){
+    if((char == 'Enter')&&(buttonSubmitDisabled == false)){
         statusChar = 4;
         return statusChar;
-    }   
+    } 
+    
+    //Enter Incorrect
+    if((char == 'Enter')&&(buttonSubmitDisabled == true)){
+        statusChar = 3;
+        return statusChar;
+    }  
 
     //Wordlenght Limit
     if(charSequence > wordLenght){

@@ -1,32 +1,3 @@
-var buttonSubmit = document.getElementById("button-submit");
-buttonSubmit.addEventListener("click", function (){
-
-    var wordOfUser = [];
-
-    //Get Chars of the div    
-    for(let i = 1; i <= wordLenght; i++){        
-        var x = document.getElementById("char-"+round+"-"+i);
-        wordOfUser.push(x.textContent);
-    }
-    
-    //Validating Word
-    startValidate(wordOfDay,wordOfUser,round);
-
-    //Next Round
-    round +=1;
-    
-    // Loser
-    if(round==7){
-        loser();
-    }
-
-    //Restart Div Focus
-    charSequence = 1;
-
-    //Disable Button
-    enableButton(0,buttonSubmit);
-})
-
 function startValidate(wordOfDay,wordOfUser,round){
     var charsHitted = wordOfDay.split("");
     var charsOfDay = wordOfDay.split("");
